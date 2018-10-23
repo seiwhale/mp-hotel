@@ -1,0 +1,26 @@
+<!--components/search.wxml-->
+<wxs module="filter" src="../../filter/filters.wxs"></wxs>
+<view>
+  <!-- 搜索框 -->
+  <view class='search-component'>
+    <view class='ipt-wrap'>
+      <input class="search-ipt {{isSearch? 'has-word':''}}" placeholder-class="input-placeholder" placeholder='{{searchPlaceholder}}' bindfocus="toggleFocus" data-search='true' value='{{searchKeyWord}}' bindinput="bindKeyInput"></input>
+      <!-- 搜索icon -->
+      <icon type="search" class='search-icon search' size='15'></icon>
+      <!-- 清除icon -->
+      <icon type="clear" class='search-icon clear' size='15' bindtap='clearSearch'></icon>
+    </view>
+    <!-- 取消 -->
+    <view class='search-cancel' wx:if="{{isSearch}}">
+      <text class='cancel-text' bindtap='toggleFocus' data-search='false'>取消</text>
+    </view>
+  </view>
+  <!-- 搜索结果匹配 -->
+  <view class='search-result' wx:if="{{isSearch}}">
+    <view class='result-item' wx:for="{{searchResult}}" wx:key='index'>
+      <text>{{filter.searchResult(item,searchKeyWord,0)}}</text>
+      <text style="color:#ff7a00">{{filter.searchResult(item,searchKeyWord,1)}}</text>
+      <text>{{filter.searchResult(item,searchKeyWord,2)}}</text>
+    </view>
+  </view>
+</view>

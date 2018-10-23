@@ -1,0 +1,97 @@
+<!--index.wxml-->
+<wxs module="filter" src="../../filter/filters.wxs"></wxs>
+<view class='hotel-query'>
+  <!-- 轮播图banner -->
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper-box'>
+    <block wx:for="{{swiperImgs}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" class="slide-image" class='swiper-item' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 搜索框 -->
+  <view class='search-box'>
+    <view class='search-item' hover-class='hover-class' bindtap='pickCity'>
+      <text class='show-address'>{{searchCondition.address}}</text>
+      <view class='my-address'>
+        <image class='address-icon' src='../../images/icon/icon_position.png'></image>
+        <text>我的位置</text>
+      </view>
+    </view>
+    <view class='search-item' bindtap='pickDate'>
+      <!-- 入住 -->
+      <view class='date-item' hover-class='hover-class'>
+        <text>{{searchCondition.checkIn.month}}月{{searchCondition.checkIn.day}}日</text>
+        <view class='check-info'>
+          <view>周{{searchCondition.checkIn.week}}</view>
+          <view>入住</view>
+        </view>
+      </view>
+      <!-- 入住天数 -->
+      <view class='date-item'>
+        <view class='check-days'>
+          <image src='../../images/icon/icon_moon.png' class='check-moon'></image>
+          <text>共{{(searchCondition.checkOut.timeStamp-searchCondition.checkIn.timeStamp)/86400000}}晚</text>
+        </view>
+      </view>
+      <!-- 离店 -->
+      <view class='date-item' hover-class='hover-class'>
+        <text>{{searchCondition.checkOut.month}}月{{searchCondition.checkOut.day}}日</text>
+        <view class='check-info'>
+          <view>周{{searchCondition.checkOut.week}}</view>
+          <view>离店</view>
+        </view>
+      </view>
+    </view>
+    <view class='search-item' hover-class='hover-class'>
+      <input placeholder="请输入关键字/酒店/地址" disabled='{{keyWordDisabled}}' class='search-ipt' />
+    </view>
+    <view class='search-item' hover-class='hover-class'>
+      <input placeholder="价格星级" disabled='{{priceStarDisabled}}' class='search-ipt' />
+    </view>
+    <button class='check-btn'>查找酒店</button>
+    <view class='quick-btn'>
+      <image src='../../images/icon/icon_quick.png' class='icon-quick'></image>
+      <text class='text-quick'>一键订房</text>
+    </view>
+  </view>
+  <!-- 功能入口 -->
+  <view class='func-entrance'>
+    <view wx:for="{{funcEntrances}}" class='func-item' wx:key="index" hover-class='hover-class'>
+      <image src='{{item.icon}}' class='func-icon' mode="{{imgMode}}"></image>
+      <view class='func-text'>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 酒店预订 -->
+  <view class='hotel-reservation'>
+    <view class='reservation-title'>
+      <text>酒店预订 · RESERVATION</text>
+    </view>
+    <!-- 酒店列表 -->
+    <view wx:for="{{hotelList}}" class='hotel-list' wx:key="item">
+      <image class='hotel-pic' src='{{item.hotelPic}}'></image>
+      <view class='hotel-info'>
+        <view class='hotel-name'>
+          <text>{{item.hotelName}}</text>
+        </view>
+        <view>
+          <text class='hotel-score'>{{item.hotelScore}}分</text>
+          <text class='hotel-star'>{{filter.lowerToUpper(item.hotelStar)}}星级</text>
+        </view>
+        <view class='hotel-position'>
+          <text class='hotel-distance'>{{item.hotelDistance}}km </text>
+          <text class='hotel-addr'> · {{item.hotelAddr}}</text>
+        </view>
+        <view>
+          <text class='hotel-feature' wx:for="{{item.hotelFeatures}}" wx:for-item="tmp" wx:key="tmp">{{tmp}}</text>
+        </view>
+        <view class='hotel-price'>
+          ¥
+          <text class='price-num'> {{item.hotelPrice}} </text>起
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

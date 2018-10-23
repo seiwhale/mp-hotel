@@ -1,0 +1,278 @@
+/**index.wxss**/
+/* 轮播图 */
+
+.swiper-box {
+  height: 452rpx;
+}
+
+.swiper-item {
+  width: 750rpx;
+  height: 100%;
+}
+
+/* 搜索框 */
+
+.search-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 210rpx;
+  transform: translateX(-50%);
+  width: 702rpx;
+  height: 490rpx;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 122, 0, 0.3);
+  padding: 0rpx 60rpx;
+}
+
+.search-item {
+  font-size: 28rpx;
+  color: #333;
+  height: 94rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-item:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+
+.show-address {
+  display: inline-block;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-address {
+  float: right;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.address-icon {
+  width: 28rpx;
+  height: 28rpx;
+  position: relative;
+  top: 4rpx;
+  margin-right: 12rpx;
+}
+
+/* 入住天数 */
+
+.date-item {
+  width: 170rpx;
+}
+.date-item:nth-child(2){
+  width: 160rpx;
+}
+
+.check-info {
+  line-height: 30rpx;
+  color: #999;
+  font-size: 22rpx;
+  float: right;
+  margin-top: 14rpx;
+}
+
+.check-days {
+  border-bottom: 1px solid #ff7a00;
+  height: 64rpx;
+  line-height: 70rpx;
+  color: #ff7a00;
+  text-align: center;
+}
+
+.check-moon {
+  width: 20rpx;
+  height: 23rpx;
+  margin-right: 10rpx;
+}
+
+.search-ipt {
+  width: 100%;
+  height: 100%;
+}
+
+.search-ipt:-moz-placeholder {
+  color: #999;
+}
+
+/* 查找btn */
+.check-btn {
+  height: 76rpx;
+  width: 404rpx;
+  float: left;
+  background-color: #ff7a00;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.quick-btn {
+  color: #ff7a00;
+  width: 148rpx;
+  height: 76rpx;
+  font-size: 24rpx;
+  float: right;
+  border: 1px solid #ff7a00;
+  border-radius: 5px;
+  background-color: #fff1e5;
+}
+.icon-quick{
+  float: left;
+  width: 28rpx;
+  height: 46rpx;
+  margin-top: 15rpx;
+  margin-left: 32rpx;
+  margin-right: 12rpx;
+}
+.text-quick{
+  float: left;
+  width: 60rpx;
+  line-height: 32rpx;
+  margin-top: 4rpx;
+}
+
+/* 功能入口 */
+
+.func-entrance {
+  width: 100%;
+  height: 180rpx;
+  margin-top: 278rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.func-item {
+  flex: 1;
+  position: relative;
+}
+
+.func-item:not(:first-child)::after {
+  content: '';
+  position: absolute;
+  top: 65rpx;
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #eee;
+}
+
+.func-icon {
+  width: 42rpx;
+  height: 36rpx;
+  display: block;
+  margin: 52rpx auto 20rpx;
+}
+
+.func-text {
+  color: #333;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* 酒店预订 */
+
+.hotel-reservation {
+  padding: 0 24rpx 10rpx;
+}
+
+.reservation-title {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+
+/* 酒店列表 */
+
+.hotel-list {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(170, 170, 170, 0.3);
+  top: 1127px;
+  width: 702rpx;
+  height: 241rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.hotel-pic {
+  float: left;
+  width: 200rpx;
+  height: 100%;
+}
+
+.hotel-info {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-left: 210rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  position: relative;
+}
+
+.hotel-name {
+  color: #333;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hotel-score {
+  color: #ff7a00;
+  margin-right: 35rpx;
+}
+
+.hotel-star, .hotel-position {
+  color: #666;
+}
+
+.hotel-position {
+  font-size: 24rpx;
+}
+
+.hotel-distance {
+  float: left;
+}
+
+.hotel-addr {
+  display: inline-block;
+  width: 260rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hotel-feature {
+  border: 1px solid rgb(255, 122, 0);
+  border-radius: 5px;
+  background-color: rgb(255, 241, 229);
+  height: 29rpx;
+  color: #ff7a00;
+  padding: 0 10rpx;
+  margin-right: 12rpx;
+}
+
+.hotel-price {
+  position: absolute;
+  right: 0;
+  bottom: 10rpx;
+  background-color: rgb(255, 122, 0);
+  width: 150rpx;
+  height: 49rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.price-num {
+  font-size: 26rpx;
+}

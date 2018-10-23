@@ -1,0 +1,48 @@
+<!--pages/filterMore/filterMore.wxml-->
+<view class='filter-box'>
+  <!-- 筛选条件 -->
+  <view class='filter-condition'>
+    <!-- 左边-筛选分类 -->
+    <scroll-view class='filter-classify lf' scroll-y="true">
+      <view class='classify-item'>品牌连锁</view>
+      <view class='classify-item active'>星级价格</view>
+    </scroll-view>
+    <!-- 右边-筛选条件 -->
+    <scroll-view class='filter-content' scroll-y="true">
+      <view class='filter-item'>
+        <view class='filter-title'>酒店类型</view>
+        <view class='clearFix'>
+          <view class='filter-btn lf'>不限</view>
+          <view class='filter-btn lf active'>经济型</view>
+          <view class='filter-btn lf'>舒适性</view>
+          <view class='filter-btn lf'>高档型</view>
+          <view class='filter-btn lf'>豪华型</view>
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class='filter-item'>
+        <view class='filter-title'>价格</view>
+        <view class='price-random'>¥ {{minPrice>maxPrice?maxPrice:minPrice}} - ¥ {{maxPrice>minPrice?maxPrice:minPrice}}</view>
+        <movable-area class="movable-area">
+          <view class='slide-bar'></view>
+          <view class='slide-bar_c' style='width:{{((maxPrice-minPrice)>0?(maxPrice-minPrice):(minPrice-maxPrice))/totalPrice*max}}px;left:{{(maxPrice>minPrice?minPrice:maxPrice)/totalPrice*max+15}}px'></view>
+          <movable-view x="{{min}}" direction="horizontal" class='movable-view' bindchange="movechange" data-id='min'>
+            <view class='price-box' hidden='{{!showMinPrice}}'>￥{{minPrice}}</view>
+            <image src='{{minTouchImg}}' class='btn_slider'bindtouchstart="touchMove" bindtouchend="touchMove" data-img='min'></image>
+          </movable-view>
+          <movable-view x="{{max}}" direction="horizontal" class='movable-view' bindchange="movechange" data-id='max'>
+            <view class='price-box' hidden='{{!showMaxPrice}}'>￥{{maxPrice}}</view>
+            <image src='{{maxTouchImg}}' class='btn_slider'bindtouchstart="touchMove" bindtouchend="touchMove"  data-img='max'></image>
+          </movable-view>
+        </movable-area>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 重置确定 -->
+  <view class='btn-group'>
+    <!-- 重置按钮 -->
+    <view class='btn-reset lf' hover-class='btn-hover'>重置</view>
+    <!-- 确认按钮 -->
+    <view class='btn-sure lf' hover-class='btn-hover'>确认</view>
+  </view>
+</view>

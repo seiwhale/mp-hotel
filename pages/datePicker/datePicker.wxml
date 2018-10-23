@@ -1,0 +1,58 @@
+<!--pages/datePicker/datePicker.wxml-->
+<view>
+  <!-- 入住/离店时间/入住天数 -->
+  <view class='date-header fixed-top'>
+    <view class='date-days'>
+      <!-- 入住 -->
+      <view class='check-date' style='float:left'>
+        <view class='date-text'>入住日期</view>
+        <view>{{checkIn.month}}月{{checkIn.day}}日</view>
+        <view>周{{checkIn.week}}</view>
+      </view>
+      <!-- 离店 -->
+      <view class='check-date' style='float:right'>
+        <view class='date-text'>离店日期</view>
+        <view hidden='{{!checkOut.timeStamp}}'>{{checkOut.month}}月{{checkOut.day}}日</view>
+        <view hidden='{{!checkOut.timeStamp}}'>周{{checkOut.week}}</view>
+      </view>
+      <!-- 天数 -->
+      <view class='check-days' hidden='{{!checkOut.timeStamp}}'>共{{(checkOut.timeStamp-checkIn.timeStamp)/86400000}}晚</view>
+    </view>
+    <!-- 星期几 -->
+    <view class='calendar-header'>
+      <text class='calendar-week'>日</text>
+      <text class='calendar-week'>一</text>
+      <text class='calendar-week'>二</text>
+      <text class='calendar-week'>三</text>
+      <text class='calendar-week'>四</text>
+      <text class='calendar-week'>五</text>
+      <text class='calendar-week'>六</text>
+    </view>
+  </view>
+  <!-- 日期选择器 -->
+  <view class='calendar-wrap'>
+    <!-- 日期 -->
+    <view class='calendar-list' scroll-y="true">
+      <view class='calendar-item' wx:for="{{calendarLists}}" wx:for-item="calendarList" wx:for-index="idx" wx:key="idx">
+        <!-- 年月 -->
+        <view class='year-month'>{{calendarList.year}}年{{calendarList.month}}月</view>
+        <!-- 日子 -->
+        <view class='canlendar-day-wrap'>
+          <view wx:for="{{calendarList.list}}" wx:key="index" class='day-row' wx:if="{{item.length!=0}}">
+            <view class="'canlendar-day'{{tmp.day?'week-day':''}} {{tmp.timeStamp<today? 'disabled':''}} {{tmp.timeStamp &&(tmp.timeStamp == checkIn.timeStamp)? 'check-in':''}} {{tmp.timeStamp&&(tmp.timeStamp== checkOut.timeStamp)? 'check-out':''}} {{(tmp.timeStamp> checkIn.timeStamp &&tmp.timeStamp< checkOut.timeStamp)? 'check-in-day':''}}"
+              wx:for="{{item}}" wx:for-item="tmp" wx:key='tmp.date'
+              bindtap="pickDate" data-stamp="{{tmp.timeStamp}}" data-can-click="{{tmp.timeStamp>=today}}">
+              {{tmp.timeStamp==today?'今天':tmp.date}}
+              <view class='check-day-text' hidden="{{!tmp.timeStamp || tmp.timeStamp != checkIn.timeStamp}}">入住</view>
+              <view class='check-day-text' hidden="{{!tmp.timeStamp || (tmp.timeStamp != checkOut.timeStamp)}}">离店</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 确认按钮  -->
+  <view class='btn-wrap'>
+    <button hover-class='sure-btn-hover' bindtap='sureDate'>确定</button>
+  </view>
+</view>

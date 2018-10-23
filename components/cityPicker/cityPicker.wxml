@@ -1,0 +1,43 @@
+<!--components/cityPicker/cityPicker.wxml-->
+<view class='city-wrap'>
+  <!-- 定位推荐 -->
+  <view class='btn-wrap'>
+    <block>
+      <text class='city-title'>根据您的定位推荐</text>
+    </block>
+    <view>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">贵阳</button>
+    </view>
+  </view>
+  <!-- 历史记录 -->
+  <view class='btn-wrap'>
+    <block>
+      <text class='city-title'>历史记录</text>
+    </block>
+    <view>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">苏州</button>
+    </view>
+  </view>
+  <!-- 热门城市 -->
+  <view class='btn-wrap'>
+    <block>
+      <text class='city-title'>热门城市</text>
+    </block>
+    <view>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">上海</button>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">北京</button>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">广州</button>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">深圳</button>
+      <button size='mini' class='city-btn no-padding' hover-class="hover-class">杭州</button>
+    </view>
+  </view>
+  <!-- 城市列表 -->
+  <view>
+    <view class='city-list' wx:for="{{cityLists}}" wx:key="item.key">
+      <view class='city-classify'>{{item.key}}</view>
+       <view class='city-names'>
+        <view class='city-name' hover-class='city-name-hover' wx:for="{{item.value}}" wx:key="{{idx}}" wx:for-index="idx" wx:for-item="tmp">{{tmp.name}}</view>
+      </view> 
+    </view>
+  </view>
+</view>

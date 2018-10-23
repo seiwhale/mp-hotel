@@ -1,0 +1,63 @@
+/* components/cityPicker/cityPicker.wxss */
+
+.city-wrap {
+  padding-top: 10rpx;
+  background-color: #fff;
+}
+
+.btn-wrap {
+  padding: 0 30rpx 5rpx;
+}
+.btn-wrap:nth-child(3) {
+  padding-bottom: 25rpx;
+}
+.city-title {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.city-btn {
+  width: 150rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  color: #333;
+  background-color: #fff;
+  border-color: #eee;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 清除内边距 */
+.city-btn.no-padding{
+  padding: 0
+}
+/* hover样式 */
+.hover-class{
+  background-color: #f6f3f1;
+}
+/* 城市列表 */
+.city-list{
+  color: #333333;
+  font-size: 28rpx;
+}
+.city-classify{
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f6f6f6;
+  padding-left: 40rpx;
+}
+.city-names{
+  padding: 0 40rpx;
+}
+.city-name{
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.city-name:not(:last-child){
+  border-bottom: 1rpx solid #eeeeee;
+}
+.city-name-hover{
+  color: #ff7a00;
+}

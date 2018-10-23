@@ -1,0 +1,54 @@
+<!--pages/filterMore/filterMore.wxml-->
+<view class='filter-box'>
+  <!-- 筛选条件 -->
+  <view class='filter-condition'>
+    <!-- 左边-筛选分类 -->
+    <scroll-view class='filter-classify lf' scroll-y="true">
+      <view class='classify-item'>品牌连锁</view>
+      <view class='classify-item active'>星级价格</view>
+    </scroll-view>
+    <!-- 右边-筛选条件 -->
+    <scroll-view class='filter-content' scroll-y="true">
+      <view class='filter-item'>
+        <view class='filter-title'>酒店类型</view>
+        <view class='clearFix'>
+          <view class='filter-btn lf'>不限</view>
+          <view class='filter-btn lf active'>经济型</view>
+          <view class='filter-btn lf'>舒适性</view>
+          <view class='filter-btn lf'>高档型</view>
+          <view class='filter-btn lf'>豪华型</view>
+        </view>
+      </view>
+      <!-- 价格 -->
+      <view class='filter-item'>
+        <view class='filter-title'>价格</view>
+        <view class='price-random'>¥ {{minPrice>maxPrice?maxPrice:minPrice}} - ¥ {{maxPrice>minPrice?maxPrice:minPrice}}</view>
+        <view class='slider-box'>
+          <view class='slide-bar-box'>
+            <view class='slide-bar_c' style='width:{{((maxPrice-minPrice)>0?(maxPrice-minPrice):(minPrice-maxPrice))/max*100}}%;left:{{(maxPrice>minPrice?minPrice:maxPrice)/max*100}}%'></view>
+          </view>
+          <view class='slider-item'>
+            <view class='price-box' hidden='{{!showMinPrice}}' style='left:{{minLeft}}'>￥{{minPrice}}</view>
+            <image src='{{minTouchImg}}' class='btn_slider' data-img='min' style='left:{{minLeft}}'></image>
+            <slider bindchange="" min='{{min}}' max='{{max}}' value='{{minPrice}}' color='{{transparent}}' activeColor='{{transparent}}' bindchanging='movechange' bindchange='movechange' data-id='min' block-color='{{transparent}}' bindtouchstart="touchMove" bindtouchend="touchMove"
+            />
+          </view>
+          <view class='slider-item'>
+            <view class='price-box' hidden='{{!showMaxPrice}}' style='left:{{maxLeft}}'>￥{{maxPrice}}</view>
+            <image src='{{maxTouchImg}}' class='btn_slider' style='left:{{maxLeft}}'></image>
+            <slider bindchange="" min='{{min}}' max='{{max}}' value='{{maxPrice}}' color='{{transparent}}' activeColor='{{transparent}}' bindchanging='movechange' bindchange='movechange' data-id='max' block-color='{{transparent}}' bindtouchstart="touchMove" bindtouchend="touchMove"
+            />
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 重置确定 -->
+  <view class='btn-group'>
+    <!-- 重置按钮 -->
+    <view class='btn-reset lf' hover-class='btn-hover'>重置</view>
+    <!-- 确认按钮 -->
+    <view class='btn-sure lf' hover-class='btn-hover'>确认</view>
+  </view>
+</view>

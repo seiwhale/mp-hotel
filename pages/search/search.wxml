@@ -1,0 +1,5 @@
+<view>
+  <search-input is-search="{{isSearch}}" bind:toggleFocus="toggleFocus"></search-input>  
+ <!-- 地点 -->
+ <city-picker wx:if="{{!isSearch}}"></city-picker>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search-input": "../../components/searchIpt/searchIpt",
+    "city-picker": "../../components/cityPicker/cityPicker"
+  },
+  "navigationBarTitleText": "搜索"
+}

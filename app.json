@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "components/searchIpt/searchIpt",
+    "components/cityPicker/cityPicker",
+    "pages/datePicker/datePicker",
+    "pages/personalCenter/personalCenter",
+    "pages/test/test",
+    "pages/filterMore/filterMore"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "酒店查询",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#FF7A00",
+    "borderStyle": "#cecece",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon/tab_home.png",
+        "selectedIconPath": "images/icon/tab_home_c.png",
+        "text": "预订"
+      },
+      {
+        "pagePath": "pages/personalCenter/personalCenter",
+        "iconPath": "images/icon/tab_my.png",
+        "selectedIconPath": "images/icon/tab_my_c.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+/**app.wxss**/
+
+page {
+  background-color: #f6f6f6;
+}
+
+.hover-class {
+  background-color: #fcf9f9;
+}
+
+.input-placeholder {
+  color: #999;
+}
+
+.lf {
+  float: left;
+}
+
+.rt {
+  float: right;
+}
+
+/* 清除浮动 */
+
+.clearFix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

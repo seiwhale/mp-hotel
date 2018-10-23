@@ -1,0 +1,35 @@
+var lowerUpper = {
+  getUpper: function (star) {
+    var starArr = ['', '一', '二', '三', '四', '五', '六'];
+    return starArr[star * 1];
+  }
+}
+var searchResult = {
+  getSearchResult: function (str, searchVal, num) {
+    var flg = str.indexOf(searchVal) >= 0;
+    var idx = flg ? str.indexOf(searchVal) : 0;
+    var length = searchVal ? idx ? searchVal.length : 0 : 0;
+    switch (num) {
+      case 0:
+        if (searchVal)
+          return str.slice(0, idx)
+        else
+          return ''
+        break;
+      case 1:
+        if (flg)
+          return searchVal
+        break;
+      case 2:
+        return str.slice(idx + length)
+        break;
+      default:
+        return str
+    }
+  }
+}
+
+module.exports = {
+  lowerToUpper: lowerUpper.getUpper,
+  searchResult: searchResult.getSearchResult
+}

@@ -1,0 +1,70 @@
+<!--pages/personalCenter/personalCenter.wxml-->
+<view class='personal-center'>
+  <!-- 头部 -->
+  <view class='personal-header'>
+    <image src='../../images/person/pic_userbg.png' class='user-bg'></image>
+    <!-- 头部主体 -->
+    <view class='user-header-main'>
+      <!-- 昵称 -->
+      <view class='user-name-box'>
+        <text>{{userInfo.nickName}}</text>
+        <image src='../../images/icon/icon_modify.png' class='icon-modify'></image>
+      </view>
+      <!-- 头像及会员等级 -->
+      <view class='user-avatar-box'>
+        <image src="{{userInfo.avatarUrl}}" class='user-avatar'></image>
+        <image src='../../images/icon/icon_level.png' class='icon-level'></image>
+        <text class='text-level'>普通会员</text>
+      </view>
+      <!-- 会员福利 -->
+      <view class='benefit'>
+        <view class='benefit-item'>
+          <text class='benefit-point'></text>
+          <text>含早餐</text>
+        </view>
+        <view class='benefit-item'>
+          <text class='benefit-point'></text>
+          <text>1倍积分</text>
+        </view>
+        <view class='benefit-item'>
+          <text class='benefit-point'></text>
+          <text>9.9折房费</text>
+        </view>
+        <view class='benefit-item'>
+          <text class='benefit-point'></text>
+          <text>13:00退房</text>
+        </view>
+      </view>
+      <!-- 会员等级提示 -->
+      <view class='level-info'>
+        当前消费<text class='level-money'>￥288</text>，再消费￥712将升级至中级会员
+      </view>
+    </view>
+  </view>
+  <!-- 我的订单+待入住 -->
+  <view class='order-check'>
+    <view class='order-check-item' hover-class='user-hover-class'>
+        <image class='order-check-img' src='../../images/icon/icon_order.png' mode='aspectFit'></image>
+        <view>我的订单</view>
+    </view>
+    <view class='order-check-item' hover-class='user-hover-class'>
+        <image class='order-check-img' src='../../images/icon/icon_check.png' mode='aspectFit'></image>
+        <view>待入住</view>
+    </view>
+  </view>
+  <!-- 发票管家+我的积分+优惠券+我的社交账号 -->
+  <view class='func-box'>
+    <view class='func-item' wx:for="{{personalFuncList}}" data-url="item.toUrl" wx:key="index" hover-class='user-hover-class'>
+      <image class='func-icon' src='{{item.icon}}' mode='aspectFit'></image>
+      <text class='func-text'>{{item.text}}</text>
+      <image class='func-right_icon' src='../../images/icon/icon_right.png'></image>
+    </view>
+  </view>
+  <view class='func-box'>
+    <view class='func-item'hover-class='user-hover-class'>
+      <image class='func-icon' src='../../images/icon/icon_contact.png' mode='aspectFit'></image>
+      <text class='func-text'>我的社交账号</text>
+      <image class='func-right_icon' src='../../images/icon/icon_right.png'></image>
+    </view>
+  </view>
+</view>

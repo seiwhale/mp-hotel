@@ -1,0 +1,73 @@
+/* components/search.wxss */
+.search-component{
+  padding: 20rpx 30rpx;
+  height: 80rpx;
+  border-bottom:2px solid #eee;
+  background-color: #ffffff;
+}
+
+.ipt-wrap {
+  float: left;
+  position: relative;
+  margin-right: 20rpx;
+}
+
+.search-ipt {
+  border-radius: 8rpx;
+  background-color: #f6f6f6;
+  width: 570rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+.search-ipt.has-word {
+  width: 476rpx;
+}
+
+/* 搜索框icon */
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search {
+  left: 20rpx;
+}
+
+/* 清除按钮 */
+
+.clear {
+  right: 26rpx;
+}
+
+.search-cancel{
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.cancel-text{
+  padding: 10rpx;
+}
+/* 搜索结果 */
+/* .search-result{
+
+} */
+.result-item{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 34rpx;
+  color: #cecece;
+  font-size: 26rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.result-item:not(:last-child){
+  border-bottom: 1px solid #eee;
+}
